@@ -21,6 +21,7 @@ public class AppointmentTest extends TestCase {
         int[] correctDate = new int[3];
         int appointmentNum = 0;
 
+        //Tests creating a new daily appointment
         description = "1st Daily";
         year = 2019;
         month = 10;
@@ -33,6 +34,7 @@ public class AppointmentTest extends TestCase {
         assertTrue("Date should be correct" , Arrays.equals(correctDate, appointmentBook.get(appointmentNum).getDate()));
         appointmentNum++;
 
+        //Tests creating a new Monthly appointment
         description = "1st Monthly";
         year = 2010;
         month = 4;
@@ -45,6 +47,7 @@ public class AppointmentTest extends TestCase {
         assertTrue("Date should be correct" , Arrays.equals(correctDate, appointmentBook.get(appointmentNum).getDate()));
         appointmentNum++;
 
+        //Tests creating a new Onetime appointment
         description = "1st Onetime";
         year = 2019;
         month = 10;
@@ -58,12 +61,14 @@ public class AppointmentTest extends TestCase {
     }
 
     public void testOccursOn() {
+        //Initializes the appointmentBook with appointments
         ArrayList<Appointment> appointmentBook = new ArrayList<Appointment>();
         appointmentBook.add(new Daily("1st Daily", 2019, 10, 24));
         appointmentBook.add(new Monthly("1st Monthly", 2010, 4, 2));
         appointmentBook.add(new Onetime("1st Onetime", 2019, 10, 24));
         int occurYear, occurMonth, occurDay, appointmentNum = 0;
 
+        //Checks to see if occursOn works for daily appointments whether valid or invalid appointment
         occurYear = 2019;
         occurMonth = 10;
         occurDay = 30;
@@ -74,6 +79,7 @@ public class AppointmentTest extends TestCase {
         assertFalse("Must return false since an invalid daily appointment", appointmentBook.get(appointmentNum).occursOn(occurYear,occurMonth,occurDay));
         appointmentNum++;
 
+        //Checks to see if occursOn works for monthly appointments whether valid or invalid appointment
         occurYear = 2020;
         occurMonth = 1;
         occurDay = 2;
@@ -84,6 +90,7 @@ public class AppointmentTest extends TestCase {
         assertFalse("Must return false since an invalid monthly appointment", appointmentBook.get(appointmentNum).occursOn(occurYear,occurMonth,occurDay));
         appointmentNum++;
 
+        //Checks to see if occursOn works for onetime appointments whether valid or invalid appointment
         occurYear = 2019;
         occurMonth = 10;
         occurDay = 24;
@@ -95,39 +102,50 @@ public class AppointmentTest extends TestCase {
     }
 
     public void testSave() throws IOException {
+        //Initializes the appointmentBook with appointments
         ArrayList<Appointment> appointmentBook = new ArrayList<Appointment>();
         appointmentBook.add(new Daily("1st Daily", 2019, 10, 24));
         appointmentBook.add(new Monthly("1st Monthly", 2010, 4, 2));
         appointmentBook.add(new Onetime("1st Onetime", 2019, 10, 24));
         int appointmentNum = 0;
 
+        //Deletes the file if already existent since this is testing based on a file that doesnt exist yet but can also work if it already did
         File appointmentFile = new File("Appointments.txt");
         if(appointmentFile.exists()) {
             appointmentFile.delete();
         }
 
+        //Saves the three appointments initialized into txt file
         appointmentBook.get(appointmentNum).save();
         appointmentNum++;
         appointmentBook.get(appointmentNum).save();
         appointmentNum++;
         appointmentBook.get(appointmentNum).save();
+
+        //Checks if the result txt file is the same as the expected txt file
         byte[] f1 = Files.readAllBytes(Paths.get("AppointmentsExpected.txt"));
         byte[] f2 = Files.readAllBytes(Paths.get("Appointments.txt"));
         assertTrue("The result file should be same as expected file", Arrays.equals(f1, f2));
     }
 
     public void testLoad() throws IOException {
+        //Initializes the appointmentBook with appointments
         ArrayList<Appointment> appointmentBook = new ArrayList<Appointment>();
         appointmentBook.add(new Daily("1st Daily", 2019, 10, 24));
         appointmentBook.add(new Monthly("1st Monthly", 2010, 4, 2));
         appointmentBook.add(new Onetime("1st Onetime", 2019, 10, 24));
+
+        //Initializes as the same as appointment book but with added appointments that are to be loaded to check if methods functions correctly
         ArrayList<Appointment> expectedAppointmentBook = appointmentBook;
         expectedAppointmentBook.add(new Onetime("2nd Onetime", 2019, 3, 2));
         expectedAppointmentBook.add(new Daily("2nd Daily", 2111, 1, 1));
         expectedAppointmentBook.add(new Monthly("2nd Monthly", 2025, 8, 17));
+        //Adds the appointments to be loaded into the expectedAppointmentBook
         appointmentBook.add(Appointment.load("2nd Onetime", "AppointmentsLoad.txt"));
         appointmentBook.add(Appointment.load("2nd Daily", "AppointmentsLoad.txt"));
         appointmentBook.add(Appointment.load("2nd Monthly", "AppointmentsLoad.txt"));
+
+        //Checks each appointment one at a time for each book to see if they are the same
         for(int i = 0; i < appointmentBook.size(); i++) {
             assertTrue("The appointment should have loaded correctly", expectedAppointmentBook.get(i).equals(appointmentBook.get(i)));
         }

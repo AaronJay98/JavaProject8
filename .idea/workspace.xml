@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ff9ce98-5a36-4fe5-b2da-6556fddda160" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppointmentsExpected.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppointmentsLoad.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/programmingassignment8/META-INF/programmingassignment8.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppointmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aaronjay/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aaronjay/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aaronjay/AppointmentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppointmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppointmentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/E5_18Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/E5_18Test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,21 +90,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppointmentTest.testOccursOn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="programmingassignment8" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppointmentTest" />
+      <option name="METHOD_NAME" value="testOccursOn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E5_18Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="programmingassignment8" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="E5_18Test" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="E5_18Test.testGetIncomeTaxU50K" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="programmingassignment8" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="E5_18Test" />
-      <option name="METHOD_NAME" value="testGetIncomeTaxU50K" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,18 +125,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.E5_18Test" />
-      <item itemvalue="JUnit.E5_18Test.testGetIncomeTaxU50K" />
       <item itemvalue="JUnit.aaronjay in programmingassignment8" />
       <item itemvalue="JUnit.AppointmentTest.testLoad" />
       <item itemvalue="JUnit.AppointmentTest" />
+      <item itemvalue="JUnit.AppointmentTest.testOccursOn" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.E5_18Test" />
         <item itemvalue="JUnit.AppointmentTest" />
+        <item itemvalue="JUnit.AppointmentTest.testOccursOn" />
         <item itemvalue="JUnit.AppointmentTest.testLoad" />
         <item itemvalue="JUnit.aaronjay in programmingassignment8" />
-        <item itemvalue="JUnit.E5_18Test.testGetIncomeTaxU50K" />
       </list>
     </recent_temporary>
   </component>
@@ -158,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571957715004</updated>
       <workItem from="1571957718400" duration="8204000" />
-      <workItem from="1571973394455" duration="6536000" />
+      <workItem from="1571973394455" duration="7360000" />
     </task>
     <servers />
   </component>
